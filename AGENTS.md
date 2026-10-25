@@ -1,0 +1,10 @@
+- Do not preserve backward compatibility. Remove obsolete paths instead of adding compatibility layers, fallbacks, or migrations.
+- Choose the simplest implementation that fully meets the current requirements. Avoid speculative abstractions, configuration, and indirection.
+- Fix problems at their root, not with patches or workarounds. When something breaks or behaves incorrectly, step back and reassess the underlying approach rather than adding compensating logic, special cases, or extra layers. Ask yourself how you would design the solution from scratch with what you now know, and correct or replace it with the simplest clean solution.
+- Grow the system in layers. Start from the smallest version that works end to end, and add each new capability on top of a product that already works. Never trade a working product for unfinished complexity.
+- Keep components modular and concerns clearly separated.
+- Prefer established, well-maintained libraries when they reduce overall complexity or improve reliability. Do not reimplement common functionality without a clear reason.
+- Lean on the dependencies already in the project before writing your own implementation or adding packages. Do not assume a library lacks a capability without checking its documentation and types.
+- Make architectural decisions for the long term. Do not accept a stopgap that only works for now and is meant to be replaced later.
+- Study how established products solve the problem before designing a solution. Adopt their proven patterns and conventions rather than inventing an approach from scratch.
+- Treat `docs/` as a reference, not an unquestionable source of truth. If a documented approach seems flawed or suboptimal, implement it as specified rather than blocking progress or silently deviating. Once complete, explain your concerns, suggest what could be improved, how and why, and ask whether the user wants those changes made.
