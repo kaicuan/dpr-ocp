@@ -154,26 +154,26 @@ flowchart TD
 
 ## 5. Implementation Roadmap
 
-- [ ] **Phase 1: Project Scaffolding & Configuration**
+- [x] **Phase 1: Project Scaffolding & Configuration**
   - Setup `package.json`, `tsconfig.json`, `tsup.config.ts`.
   - Implement `src/config.ts` with Zod schema, default template generation, and JSONC reader/writer.
   - Add unit tests for configuration loading and overrides.
 
-- [ ] **Phase 2: DPR HTTP Client & SOCKS5 Networking**
+- [x] **Phase 2: DPR HTTP Client & SOCKS5 Networking**
   - Implement `src/client/dpr.ts` (`POST /rotate`, `GET /status` polling, basic auth).
   - Implement `src/client/socks.ts` (`SocksProxyAgent` creation, reachability probe).
   - Add unit tests with mock HTTP/SOCKS5 server.
 
-- [ ] **Phase 3: 429 Classifier & Rotation Coordinator**
+- [x] **Phase 3: 429 Classifier & Rotation Coordinator**
   - Implement `src/interceptor/classifier.ts` (parses headers, duration regex, RPM vs. quota distinction).
   - Implement `src/interceptor/coordinator.ts` (orchestrates rotate -> poll -> notify -> replay).
   - Add unit tests covering cooldown edge cases and attempt limits.
 
-- [ ] **Phase 4: Fetch Interceptor & Replay Engine**
+- [x] **Phase 4: Fetch Interceptor & Replay Engine**
   - Implement `src/interceptor/fetch.ts` (selective URL matching, body buffering, streaming replay).
   - Implement strict fail-closed error handling and friendly diagnostic messages.
 
-- [ ] **Phase 5: OpenCode Plugin Lifecycle & Commands**
+- [x] **Phase 5: OpenCode Plugin Lifecycle & Commands**
   - Implement `src/index.ts` conforming to `@opencode-ai/plugin`'s `Plugin` interface.
   - Register `/dpr` slash commands in `config` hook.
   - Register `dpr_*` tools in `tool` hook.

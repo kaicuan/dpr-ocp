@@ -1,0 +1,30 @@
+{
+  "name": "dpr-ocp",
+  "version": "0.1.0",
+  "description": "OpenCode DataProxy-Rotate plugin for mobile IP auto-rotation on rate limits",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target node && tsc --emitDeclarationOnly",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.14.40",
+    "socks": "^2.8.9",
+    "socks-proxy-agent": "^8.0.5",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.12.2",
+    "typescript": "^5.8.2"
+  }
+}
